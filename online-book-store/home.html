@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
 
+    <style>
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+
+    background-color: #337cd6;
+
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.logo {
+
+    position: absolute;
+    left: 20px;
+}
+
+.sitename {
+
+    text-align: center;
+}
+
+
+
+.navbar {
+
+    background-color: #3c3737;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+
+.navbar a {
+
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+
+    color: #337cd6;
+}
+
+
+
+.sidebar {
+
+    display: flex;
+    flex-direction: column;
+
+    height: calc(100% - 160px);
+    width: 200px;
+    background-color: #3c3737;
+    position: absolute;
+
+    padding: 30px;
+    padding-left: 50px;
+
+    align-items: start;
+}
+
+.sidebar a{
+
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+
+    color: #337cd6;
+}
+
+
+
+.main {
+
+    margin-left: 200px;
+    padding: 100px;
+    width: calc(100% - 200px);
+    background-color: #d7e2f5;
+    font-size: 25px;
+}
+    </style>
+</head>
+
+
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            <h1>
+                Logo
+            </h1>
+        </div>
+
+        <div class="sitename">
+            <h1>
+                Online Book Store
+            </h1>
+        </div>
+        
+    </header>
+
+    <nav class="navbar">
+
+        <a href="home.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="#registration">Registration</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="#cart">Cart</a>
+    </nav>
+
+    <aside class="sidebar">
+
+        <a href="#cse">CSE</a>
+        <a href="#ece">ECE</a>
+        <a href="#eee">EEE</a>
+        <a href="#civil">CIVIL</a>
+    </aside>
+
+
+    <main class="main">
+
+        <p>
+            Explore our online bookstore for a comprehensive selection of engineering books, covering everything from civil to software engineering. Enjoy expert-curated collections, fast shipping, and competitive prices on essential titles!
+        </p>
+    </main>
+</body>
+</html>
