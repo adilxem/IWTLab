@@ -210,13 +210,40 @@
         <div class="loginform">
 
             <h2>Login</h2>
-            <form action="#" method="post">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
+            <form id="loginform" action="#" method="post" onsubmit="return validateForm()">
+                <input type="text" id="username" name="username" placeholder="Username">
+                <input type="password" id="password" name="password" placeholder="Password">
                 <button type="submit">Log In</button>
                 <button type="reset">Reset</button>
             </form>
         </div>
     </main>
+
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username.trim() === "") {
+                alert("Username cannot be empty.");
+                return false;
+            } else if (username.length < 3) {
+                alert("Username must be at least 3 characters long.");
+                return false;
+            }
+
+            if (password.trim() === "") {
+                alert("Password cannot be empty.");
+                return false;
+            } else if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    
 </body>
 </html>
