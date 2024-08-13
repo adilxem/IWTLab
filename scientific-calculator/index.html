@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+</head>
 
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    margin: 0;
+}
+
+.calculator {
+    max-width: 400px;
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+    margin-bottom: 20px;
+}
+
+#calc-display {
+    width: 100%;
+    height: 70px;
+    font-size: 24px;
+    text-align: right;
+    border: none;
+    background-color: #34495e;
+    color: white;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.btn {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #16a085;
+}
+
+</style>
+<body>
+    
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="calc-display" disabled />
+        </div>
+        <div class="buttons">
+            <!-- First Row -->
+            <button class="btn" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" onclick="appendToDisplay('9')">9</button>
+            <button class="btn" onclick="appendToDisplay('/')">/</button>
+
+            <!-- Second Row -->
+            <button class="btn" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" onclick="appendToDisplay('6')">6</button>
+            <button class="btn" onclick="appendToDisplay('*')">*</button>
+
+            <!-- Third Row -->
+            <button class="btn" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" onclick="appendToDisplay('3')">3</button>
+            <button class="btn" onclick="appendToDisplay('-')">-</button>
+
+            <!-- Fourth Row -->
+            <button class="btn" onclick="appendToDisplay('0')">0</button>
+            <button class="btn" onclick="appendToDisplay('.')">.</button>
+            <button class="btn" onclick="calculate()">=</button>
+            <button class="btn" onclick="appendToDisplay('+')">+</button>
+
+            <!-- Fifth Row -->
+            <button class="btn" onclick="appendToDisplay('(')">(</button>
+            <button class="btn" onclick="appendToDisplay(')')">)</button>
+            <button class="btn" onclick="clearDisplay()">C</button>
+            <button class="btn" onclick="deleteLast()">DEL</button>
+
+            <!-- Scientific Functions -->
+            <button class="btn" onclick="appendToDisplay('Math.sin(')">sin</button>
+            <button class="btn" onclick="appendToDisplay('Math.cos(')">cos</button>
+            <button class="btn" onclick="appendToDisplay('Math.tan(')">tan</button>
+            <button class="btn" onclick="appendToDisplay('Math.log(')">log</button>
+            <button class="btn" onclick="appendToDisplay('Math.sqrt(')">√</button>
+            <button class="btn" onclick="appendToDisplay('**')">^</button>
+        </div>
+    </div>
+
+    <script>
+
+        // Append value to display
+        function appendToDisplay(value) {
+            document.getElementById('calc-display').value += value;
+        }
+
+        // Clear the display
+        function clearDisplay() {
+            document.getElementById('calc-display').value = '';
+        }
+
+        // Delete last character
+        function deleteLast() {
+            let currentDisplay = document.getElementById('calc-display').value;
+            document.getElementById('calc-display').value = currentDisplay.slice(0, -1);
+        }
+
+        // Calculate the result
+        function calculate() {
+            try {
+                let result = eval(document.getElementById('calc-display').value);
+                document.getElementById('calc-display').value = result;
+            } catch (error) {
+                alert('Invalid Expression');
+                clearDisplay();
+            }
+        }
+
+    </script>
+</body>
+</html>
