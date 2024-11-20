@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+<!DOCTYPE bookstore SYSTEM "books.dtd">
+<bookstore>
+    <book>
+        <title>"1984"</title>
+        <author>Geroge Orwell</author>
+        <ISBN>9783843701419</ISBN>
+        <Publisher>Secker and Warburg</Publisher>
+        <Edition>PaperBack</Edition>
+        <Price>2004</Price>
+    </book>
+</bookstore>
